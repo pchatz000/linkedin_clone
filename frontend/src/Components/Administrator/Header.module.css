@@ -1,0 +1,14 @@
+/* =========== | Header | =========== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    box-shadow: 0px 4px 2px -2px #f2f2f2;
+}
+
+.navbarLogo .logo {
+    width: 40px;
+    height: 40px;
+}

@@ -1,0 +1,81 @@
+.networkPage {
+    padding: 20px;
+    background-color: rgba(8, 99, 43, 0.1);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; 
+}
+
+.pageContent {
+    display: flex;
+    max-width: 1000px; 
+    width: 100%; 
+}
+
+.connectionsSummary {
+    width: 25%; /* Connections counter box take 25% of the page width */
+    display: flex;
+    justify-content: center;
+}
+
+.summaryBox {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%; 
+    height: 5%;
+}
+
+.summaryBox h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.summaryBox span {
+    display: block;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color:var(--darkerbase-color); 
+}
+
+.connectionGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two-column layout */
+    gap: 20px;
+    width: 75%; /* Take the remaining 75% of the grid */
+    height: 20%;
+    padding-left: 20px;
+}
+
+.connectionCard {
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center; 
+    gap: 10px; 
+    min-height: 100px; 
+}
+
+.connectionImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+.connectionInfo h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.connectionInfo p {
+    margin: 5px 0 0;
+    color: black;
+    font-size: 13px;
+}

@@ -1,0 +1,203 @@
+@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmY5MWI5YzVjMjBiMTc1N2YzODU1ZjIiLCJpYXQiOjE3Mjc2MzEzMTMsImV4cCI6MTcyNzYzNDkxM30.bMy3DZ3zwQNPxMioPAkuAmRgUNLpRbBvmWIQWoveOL0
+@refreshToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmUwNTE1NTEzMzcyMWNjOWU2ZTI1NTEiLCJpYXQiOjE3MjY1OTQ5MzEsImV4cCI6MTcyNzE5OTczMX0.oi6XeItNWZyrZGDpZ-bvoqHyCErWS3DHYf6DwJMBEBg
+
+@accessToken2 = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmY5MWI5YzVjMjBiMTc1N2YzODU1ZjIiLCJpYXQiOjE3Mjc2MTY5MzgsImV4cCI6MTcyNzYyMDUzOH0.micNaYP_iOAoDFh4eQ3LihBq-Yya1WrD-YDo0i9lJoo
+
+@refreshToken2 = 
+
+
+POST https://localhost:3000/api/users/register
+Content-Type: application/json
+
+{
+	"username": "panagiotis",
+	"name": "panagiotis",
+	"surname": "chatzimichos",
+	"email": "test@test.gr",
+	"password": "what",
+	"telephone": "00306986983169"
+}
+
+###
+
+POST https://localhost:3000/api/users/register
+Content-Type: application/json
+
+{
+	"username": "ioanna",
+	"name": "ioanna",
+	"surname": "kontemeniotis",
+	"email": "tes2t@test2.gr",
+	"password": "what",
+	"telephone": "00306943545214"
+}
+
+###
+
+POST https://localhost:3000/api/users/register
+Content-Type: application/json
+
+{
+	"username": "admin",
+	"name": "admin",
+	"surname": "admin",
+	"email": "admin@admin.gr",
+	"password": "password",
+	"telephone": "00301337420"
+}
+
+###
+
+POST https://localhost:3000/api/users/register
+Content-Type: application/json
+
+{
+	"username": "panagiotis2",
+	"name": "panagiotis2",
+	"surname": "panagiotis2",
+	"email": "panagiotis@panagios2.gr",
+	"password": "password",
+	"telephone": "00301331237420"
+}
+
+###
+
+GET https://localhost:3000/api/users/
+Accept: application/json
+
+### get user by id
+GET https://localhost:3000/api/users/info/66eaff41d5130628958694b9
+Authorization: Bearer {{accessToken}}
+
+
+
+### ioanna requests connection to panagiotis
+
+POST https://localhost:3000/api/users/connect/66f91c0a5c20b1757f385600
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+### panagiotis checks connections
+GET https://localhost:3000/api/users/connections
+Authorization: Bearer {{accessToken2}}
+Content-Type: application/json
+
+### panagiotis accepts
+
+POST https://localhost:3000/api/users/connect/66f91b9c5c20b1757f3855f2/respond
+Authorization: Bearer {{accessToken2}}
+Content-Type: application/json
+
+{
+	"action": "accept"
+}
+
+### test authorization
+
+GET https://localhost:3000/api/users/check-auth
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+### add skill
+
+POST https://localhost:3000/api/users/skills
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+	"skill": "new skill"
+}
+
+### delete skill
+
+DELETE https://localhost:3000/api/users/skills/0
+Authorization: Bearer {{accessToken}}
+
+### toggle public skill
+
+PUT https://localhost:3000/api/users/skills/0
+Authorization: Bearer {{accessToken}}
+
+###
+POST https://localhost:3000/api/users/work-experience
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+	"experience": "new wk"
+}
+
+### edit description
+
+PUT https://localhost:3000/api/users/description
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+	"description": "my desc2ription"
+}
+
+
+### edit employment status
+
+PUT https://localhost:3000/api/users/employment-status
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+	"employmentStatus": "Google"
+}
+
+
+### upload profile picture
+
+POST https://localhost:3000/api/users/profile-picture
+Authorization: Bearer {{accessToken}}
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="profilePicture"; filename="profile-pic.jpg"
+Content-Type: image/jpeg
+
+< /Users/mclovin/Pictures/1abed71c4786f2c0074f5665a2efa208.jpg
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+### how to get the pfp
+
+GET https://localhost:3000/api/users/uploads/profile-pictures/1726927692290-profile-pic.jpg
+
+### change password
+
+PUT https://localhost:3000/api/users/change-password
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+	"currentPassword": "what", 
+	"newPassword": "my__new__password"
+}
+
+### change email
+
+PUT https://localhost:3000/api/users/change-email
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+	"newEmail": "panchatzim2@gmail.com"
+}
+
+###
+
+GET https://localhost:3000/api/users/notifications
+Authorization: Bearer {{accessToken}}
+
+###
+
+GET https://localhost:3000/api/users/search?query=fi
+Authorization: Bearer {{accessToken}}
+
+
+### connection status
+GET https://localhost:3000/api/users/connection-status/66f9459b5c20b1757f385889
+Authorization: Bearer {{accessToken2}}

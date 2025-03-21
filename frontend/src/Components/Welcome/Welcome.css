@@ -1,0 +1,55 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.welcome-page {
+    background-color: rgba(8, 99, 43, 0.1);
+    min-height: calc(100vh - 40px); /* full height minus the navbar */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.welcome-box {
+    background-color: white;
+    padding: 40px 60px; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 80%; 
+    max-width: 800px;
+    margin-top: 20px; 
+}
+
+.welcome-buttons .login-button, 
+.welcome-buttons .register-button {
+    padding: 10px 20px;
+    margin-left: 10px; 
+    border: none;
+    cursor: pointer;
+    width: 100px; 
+    border-radius: 4px; 
+    text-align: center;
+}
+
+.welcome-buttons .login-button {
+    background-color: var(--base-color);
+    color: white;
+}
+
+.welcome-buttons .login-button:hover{
+    background-color: var(--darkerbase-color); 
+}
+
+.welcome-buttons .register-button {
+    background-color: white;
+    color: var(--base-color); 
+    border: 2px solid var(--base-color); 
+}
+
+.welcome-buttons .register-button:hover {
+    background-color: #f3f4f6;
+}

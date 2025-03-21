@@ -1,0 +1,55 @@
+@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmY5MWI5YzVjMjBiMTc1N2YzODU1ZjIiLCJpYXQiOjE3Mjc2MjQ4MjYsImV4cCI6MTcyNzYyODQyNn0.oX_o9li_YKjoC1ksdg9eFs3y8uaZ9qm06fbg5HN1K0Y
+@refreshToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmUwNTE1NTEzMzcyMWNjOWU2ZTI1NTEiLCJpYXQiOjE3MjY1OTQ5MzEsImV4cCI6MTcyNzE5OTczMX0.oi6XeItNWZyrZGDpZ-bvoqHyCErWS3DHYf6DwJMBEBg
+
+@accessToken2 = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmVhZmY1M2Q1MTMwNjI4OTU4Njk0YmIiLCJpYXQiOjE3MjcwODU1MDIsImV4cCI6MTcyNzA4OTEwMn0.mMizfysLOxPiipeKxIDj1taMFT5DHez0-tRTakBEVV4
+
+@refreshToken2 = 
+
+
+### send message from panagiotis to ioanna
+
+POST https://localhost:3000/api/message/send
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+	"recipientId": "66eaff53d5130628958694bb",
+	"content": "hello ioanna!"
+}
+
+### send message from panagiotis to fivos
+
+POST https://localhost:3000/api/message/send
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+	"recipientId": "66edb7a42e727b455a44e845",
+	"content": "hello fivos!"
+}
+
+
+### send message the other way
+
+POST https://localhost:3000/api/message/send
+Authorization: Bearer {{accessToken2}}
+Content-Type: application/json
+
+{
+	"recipientId": "66eaff41d5130628958694b9",
+	"content": "hello panagiotis!"
+}
+
+
+### get all conversations for a user
+
+GET https://localhost:3000/api/message/
+Authorization: Bearer {{accessToken}}
+
+
+### get specific conversation
+
+GET https://localhost:3000/api/message/66f977a99422079c16ee55e1
+Authorization: Bearer {{accessToken}}
+
+

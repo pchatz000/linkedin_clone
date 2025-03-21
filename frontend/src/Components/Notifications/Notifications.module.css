@@ -1,0 +1,44 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.notificationPage {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    min-height: 100vh;
+    background-color: rgba(8, 99, 43, 0.1);
+}
+
+.notifications {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    gap: 15px;
+}
+
+.notifications h3{
+    margin-top: 0;
+    color: #333;
+    /* text-align: left; */
+}
+
+/* =========== | Containers | =========== */
+
+.requestsContainer, .postsContainer {
+    background-color: white;
+    padding: 20px;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.userPlusIcon {
+    cursor: pointer;
+}
+
+.userPlusIcon:hover{
+    color:  var(--darkerbase-color); 
+}

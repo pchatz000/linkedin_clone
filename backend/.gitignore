@@ -1,0 +1,9 @@
+node_modules
+dist/
+.env
+uploads/profile-pictures/*
+!uploads/profile-pictures/.gitkeep
+uploads/post-media/*
+!uploads/post-media/.gitkeep
+/Users/mclovin/Documents/sxoli/tedi/LinkedInClone/backend/privatekey.key
+/Users/mclovin/Documents/sxoli/tedi/LinkedInClone/backend/certificate.crt

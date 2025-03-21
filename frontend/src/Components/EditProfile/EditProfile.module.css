@@ -1,0 +1,182 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.edit-profile-page {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    min-height: 100vh;
+    background-color: rgba(8, 99, 43, 0.1);
+}
+
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+}
+
+/* =========== | Profile header | =========== */
+.profile-header,
+.skills-container,
+.experience-container,
+.education-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px 0; /* Add margin to separate sections */
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+    flex: 1;
+    gap: 15px;
+}
+
+.profile-name {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.profile-description {
+    margin: 5px 0;
+    color: #666;
+    text-align: left;
+}
+
+.edit-button {
+    background-color: white;
+    color: var(--base-color);
+    border: 1px solid var(--base-color);
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: flex-start; 
+}
+
+.edit-button:hover {
+    background-color: #f3f4f6;
+}
+/* =========== | Profile Header Buttons | =========== */
+
+.done-button {
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    width: 80px; 
+    border-radius: 4px; 
+    text-align: center;
+}
+
+
+.done-button {
+    margin-left: 10px;
+    background-color: white;
+    color: var(--base-color); 
+    border: 2px solid var(--base-color); 
+}
+
+.done-button:hover {
+    background-color: #f3f4f6;
+}
+
+/* =========== | Profile details | =========== */
+.profile-details-section {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.profile-details-section h3 {
+    margin: 0;
+    color: #333;
+    text-align: left;
+}
+
+.skills-container, .experience-container, .education-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+}
+
+.container-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add-icon {
+    cursor: pointer;
+    color: var(--base-color);
+}
+
+.add-icon:hover {
+    color:  var(--darkerbase-color); 
+}
+
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+}
+
+li {
+    padding: 10px 15px; 
+    background-color: #f9f9f9;
+    border-radius: 4px; 
+    margin-bottom: 10px; 
+    display: flex; 
+    align-items: center; 
+}
+
+li:last-child {
+    margin-bottom: 0;
+}
+
+li span {
+    flex: 1; 
+    text-align: left; 
+}
+
+li .remove-icon {
+    cursor: pointer;
+    color: var(--base-color);
+    margin-left: 10px; 
+}
+
+li .remove-icon:hover {
+    color: #c9302c; /* Darker red on hover */
+}

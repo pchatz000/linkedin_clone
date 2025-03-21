@@ -1,0 +1,45 @@
+@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmVhZmY0MWQ1MTMwNjI4OTU4Njk0YjkiLCJpYXQiOjE3Mjc0NTc1MDgsImV4cCI6MTcyNzQ2MTEwOH0.OFR0g2dk4cAs18NbIMFVdbT3Bcr8_6FVAMrTMiGMeLM
+
+### get my posted jobs and applied jobs from /user/info/:id
+
+### create job
+POST https://localhost:3000/api/job
+
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+	"location": "Ahens", 
+	"companyName": "DI UOA",
+	"description": "Remote"
+}
+
+###
+POST https://localhost:3000/api/job
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+	"title": "lab assistant",
+	"location": "Ahens", 
+	"companyName": "DI UOA",
+	"description": "lab assistant"
+}
+
+### apply
+POST https://localhost:3000/api/job/apply/(insert job id)
+Authorization: Bearer {{accessToken}}
+
+### see applicants for job i posted
+GET https://localhost:3000/api/job/applicants/(insert job id)
+Authorization: Bearer {{accessToken}}
+
+### get job feed (returns ids, use ids with the next endpoint)
+GET https://localhost:3000/api/job/feed
+Authorization: Bearer {{accessToken}}
+
+### get full job by id
+GET https://localhost:3000/api/job/info/(insert job id)
+Authorization: Bearer {{accessToken}}
+
+

@@ -1,0 +1,50 @@
+@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmVhZmY0MWQ1MTMwNjI4OTU4Njk0YjkiLCJpYXQiOjE3Mjc2Mjk1MzQsImV4cCI6MTcyNzYzMzEzNH0.Yc6VA1p-BjY8BFRM86BpZDFnL4GA2lC_smNgD7Mh9cY
+@refreshToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmUwNTE1NTEzMzcyMWNjOWU2ZTI1NTEiLCJpYXQiOjE3MjY1OTQ5MzEsImV4cCI6MTcyNzE5OTczMX0.oi6XeItNWZyrZGDpZ-bvoqHyCErWS3DHYf6DwJMBEBg
+
+@accessToken2 = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmVhZmY1M2Q1MTMwNjI4OTU4Njk0YmIiLCJpYXQiOjE3Mjc1NDI5NzMsImV4cCI6MTcyNzU0NjU3M30.EKdRO2cbQnlj0Oz0Kgw7jWRbbaJdM_CxQFihlYOgTjs
+
+@refreshToken2 = 
+
+POST https://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+	"username": "panagiotis",
+	"password": "my__new__password"
+}
+
+###
+
+POST https://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+	"username": "ioanna",
+	"password": "what"
+}
+
+
+###
+
+POST https://localhost:3000/api/auth/refresh
+Content-Type: application/json
+
+{
+	"refreshToken": "{{refreshToken}}"
+}
+
+###
+
+POST https://localhost:3000/api/auth/logout
+Content-Type: application/json
+
+{
+	"refreshToken": "{{refreshToken}}"
+}
+
+
+
+
+### search
+GET https://localhost:3000/api/users/search?query=fi
+Authorization: Bearer {{accessToken}}

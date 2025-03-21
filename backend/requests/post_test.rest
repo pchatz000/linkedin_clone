@@ -1,0 +1,75 @@
+@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmY5MWI5YzVjMjBiMTc1N2YzODU1ZjIiLCJpYXQiOjE3Mjc2MzEzMTMsImV4cCI6MTcyNzYzNDkxM30.bMy3DZ3zwQNPxMioPAkuAmRgUNLpRbBvmWIQWoveOL0
+@refreshToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmUwNTE1NTEzMzcyMWNjOWU2ZTI1NTEiLCJpYXQiOjE3MjY1OTQ5MzEsImV4cCI6MTcyNzE5OTczMX0.oi6XeItNWZyrZGDpZ-bvoqHyCErWS3DHYf6DwJMBEBg
+
+@accessToken2 = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmVhZmY1M2Q1MTMwNjI4OTU4Njk0YmIiLCJpYXQiOjE3Mjc0NTc1MTcsImV4cCI6MTcyNzQ2MTExN30.UpWKBhBn-Y3WBbIuO78aYwNgalRNYm9m9q_4wdZqXcw
+
+@refreshToken2 = 
+### create post
+
+POST https://localhost:3000/api/post/create
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+  "text": "νονονο"
+}
+
+### get feed
+GET https://localhost:3000/api/post/feed
+Authorization: Bearer {{accessToken}}
+
+
+### get post info etc.
+
+GET https://localhost:3000/api/post/info/66f965500f64c18851c7ad17
+Authorization: Bearer {{accessToken}}
+
+
+### create comment
+
+POST https://localhost:3000/api/post/comment/66e98d2bbbcde38afab483c1
+Authorization: Bearer {{accessToken2}}
+Content-Type: application/json
+
+{
+  "text": "my comment is this"
+}
+
+### delete comment
+
+DELETE https://localhost:3000/api/post/comment/66e98d2bbbcde38afab483c1/66e98e5ed7715b36827b1d30
+Authorization: Bearer {{accessToken2}}
+
+### like post
+
+POST https://localhost:3000/api/post/like/66e98d2bbbcde38afab483c1
+Authorization: Bearer {{accessToken2}}
+
+### unlike post
+
+POST https://localhost:3000/api/post/unlike/66e98d2bbbcde38afab483c1
+Authorization: Bearer {{accessToken2}}
+
+### post with image
+POST https://localhost:3000/api/post/create
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+Authorization: Bearer {{accessToken}}
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="text"
+
+This is a test post with an image!
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="media"; filename="test-image.jpg"
+Content-Type: image/jpeg
+
+< /Users/mclovin/Pictures/test-image.jpg
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+### post image at
+GET https://localhost:3000/api/post/uploads/post-media/1726931649201-test-image.jpg
+
+
+
+
+
